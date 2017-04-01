@@ -1,0 +1,15 @@
+void usun(struct lista*tablica[])
+{
+	for (int i = 0; i < ROZMIAR; i++)
+	{
+		struct lista *wsk;
+		while (tablica[i])
+		{
+			wsk = tablica[i];
+			tablica[i] = tablica[i]->pnext;
+			free(wsk);
+			wsk = NULL;
+		}
+	}
+	free(tablica);
+}
